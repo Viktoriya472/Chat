@@ -1,13 +1,16 @@
 {% extends 'default.html' %}
 {% block title %}{% endblock title %}
 {% block content %}
-    <div id="chat"></div>
-    <div id="chat-input">
+    {% for user in users %}
+        <div><a href="{% url 'room' user.id %}">{{user}}</a></div>
+    {% endfor %}
+
+    {% comment %} <div id="chat-input">
         <input id="room-name-input" type="text" size="100">
         <input id="room-name-submit" type="button" value="Отправить">
-    </div>
+    </div> {% endcomment %}
     
-    <script>
+    {% comment %} <script>
         document.querySelector("#room-name-input").focus();
         document.querySelector("#room-name-input").onkeyup = function(e){
             if (e.key == "Отправить") {
@@ -18,5 +21,5 @@
             let roomName = document.querySelector("#room-name-input").value;
             window.location.pathname = '/chat/'+ roomName + "/";
         };
-    </script>
+    </script> {% endcomment %}
 {% endblock content %}
