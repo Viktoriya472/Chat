@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chat.apps.ChatConfig',
+    'main.apps.MainConfig',
+    'phone_auth',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +74,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'messenger.wsgi.application'
 ASGI_APPLICATION = 'messenger.asgi.application'
 
+# Channels
+# https://channels.readthedocs.io/en/latest/
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
@@ -91,6 +95,20 @@ DATABASES = {
     }
 }
 
+
+# django-phone-auth
+# https://django-phone-auth.readthedocs.io/en/latest/index.html
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'phone_auth.backend.CustomAuthBackend',
+]
+AUTHENTICATION_METHODS = {'phone',}
+REGISTER_USERNAME_REQUIRED = False
+REGISTER_EMAIL_REQUIRED = False
+REGISTER_FNAME_REQUIRED = False
+REGISTER_LNAME_REQUIRED = False
+LOGIN_REDIRECT_URL = 'chat'
+LOGOUT_REDIRECT_URL = '/'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -123,8 +141,8 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
+# Static files
+# https://docs.djangoproject.com/en/5.1/howto/static-files
 
 STATIC_URL = 'static/'
 

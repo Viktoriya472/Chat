@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponseForbidden
-from django.contrib.auth.models import User
+from main.models import Users
 from django.views.generic import ListView
 
 
 class Chat(ListView):
-    model = User
+    model = Users
     template_name = "chat.html"
     context_object_name = "users"
 

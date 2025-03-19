@@ -1,0 +1,60 @@
+{% extends "phone_auth/base.html" %}
+
+{% block title_block %}
+    Регистрация
+{% endblock title_block %}
+
+{% block body_block %}
+
+    <!--suppress HtmlUnknownAttribute -->
+<div class="phoneauthform">
+    <h3 class="phoneauthform-title">Регистрация</h3>
+    <form class="phoneauthform-content" method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="fieldWrapper">
+            {{ form.phone.errors }}
+            <label for="id_phone">
+                Номер телефона{% if form.phone.field.required %}*{% endif %}:
+            </label>
+            <input type="tel"
+                   id="id_phone"
+                   name="{{ form.phone.html_name }}"
+                   {% if form.phone.value %}
+                        value="{{ form.phone.value }}"
+                   {% endif %}
+                   {% if form.phone.field.required %}required{% endif %}>
+        </div>
+
+        <div class="fieldWrapper">
+            {{ form.password.errors }}
+            <label for="id_password">
+                Пароль{% if form.password.field.required %}*{% endif %}:
+            </label>
+            <input type="password"
+                   id="id_password"
+                   name="{{ form.password.html_name }}"
+                   {% if form.password.field.required %}required{% endif %}>
+        </div>
+
+        <div class="fieldWrapper">
+            {{ form.confirm_password.errors }}
+            <label for="id_confirm_password">
+                Пароль повторно{% if form.confirm_password.field.required %}*{% endif %}:
+            </label>
+            <input type="password"
+                   id="id_confirm_password"
+                   name="{{ form.confirm_password.html_name }}"
+                   {% if form.confirm_password.field.required %}required{% endif %}>
+        </div>
+
+        <button class="phoneauth-button" type="submit">Зарегистрироваться</button>
+    </form>
+    <div class="dpa-help-text">
+        <p>
+            Есть аккаунт? <a href="{% url 'phone_auth:phone_login' %}">Войти</a>
+        </p>
+    </div>
+</div>
+{% endblock body_block %}

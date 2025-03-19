@@ -1,0 +1,50 @@
+{% extends "phone_auth/base.html" %}
+
+{% block title_block %}
+    Проверка пользователя
+{% endblock title_block %}
+
+{% block body_block %}
+
+<div class="phoneauth-jumbotron">
+    <div class="message">
+        {% if title %}
+            <h1>{{ title }}</h1>
+        {% endif %}
+    </div>
+
+    <div class="dpa-table-title">
+        <h3>Номера телефонов</h3>
+        <a href="{% url 'phone_auth:add_phone' %}">+ Add New</a>
+    </div>
+    <div class="dpa-table">
+        <div class="dpa-row header">
+            <div class="dpa-cell">
+                Номер телефона
+            </div>
+            <div class="dpa-cell">
+                Статус
+            </div>
+        </div>
+        {% for phone_obj in phone_numbers %}
+        <div class="dpa-row">
+            <div class="dpa-cell">
+                {{ phone_obj.phone }}
+            </div>
+            <div class="dpa-cell">
+                {% if phone_obj.is_verified %}
+                <p>Verified</p>
+                {% else %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="method" value="phone">
+                    <input type="hidden" name="pk" value="{{ phone_obj.pk }}">
+                    <input class="dpa-cell-btn" type="submit" value="Проверить">
+                </form>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock body_block %}
