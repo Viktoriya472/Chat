@@ -14,6 +14,34 @@
         {{ form.non_field_errors }}
 
         <div class="fieldWrapper">
+            {{ form.username.errors }}
+            <label for="id_username">
+                Имя{% if form.username.field.required %}*{% endif %}:
+            </label>
+            <input type="text"
+                   id="id_username"
+                   name="{{ form.username.html_name }}"
+                   {% if form.username.value %}
+                        value="{{ form.username.value }}"
+                   {% endif %}
+                   {% if form.username.field.required %}required{% endif %}>
+        </div>
+
+        <div class="fieldWrapper">
+            {{ form.email.errors }}
+            <label for="id_email">
+                Email{% if form.email.field.required %}*{% endif %}:
+            </label>
+            <input type="email"
+                   id="id_email"
+                   name="{{ form.email.html_name }}"
+                   {% if form.email.value %}
+                        value="{{ form.email.value }}"
+                   {% endif %}
+                   {% if form.email.field.required %}required{% endif %}>
+        </div>
+
+        <div class="fieldWrapper">
             {{ form.phone.errors }}
             <label for="id_phone">
                 Номер телефона{% if form.phone.field.required %}*{% endif %}:

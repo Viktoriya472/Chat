@@ -1,23 +1,25 @@
 from django.shortcuts import render
-from django.http import HttpResponseForbidden
-from main.models import Users
+from chat.models import Chat, Message
 from django.views.generic import ListView
+from main.models import Contacts
 
 
 class Chat(ListView):
-    model = Users
+    model = Chat
     template_name = "chat.html"
-    context_object_name = "users"
+    context_object_name = "chats"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['contacts'] = Contacts.objects.all()
+        return context
 
 
-# def chat(request):
-#     users = User.objects.all().values_list("username")
-#     return render(request, "chat.html", {"users": users})
+class Room(ListView):
+    model = Message
+    template_name = "room.html"
 
-
-def room(request, user_id):
-    try:
-        user = request.user.id
-    except:
-        return HttpResponseForbidden()
-    return render(request, "room.html", {"user": user})
+    def get_context_data(self, *, object_list=None, **kwargs):
+            context = super().get_context_data(**kwargs)
+            context['chat_name']= self.kwargs['chat_name']
+            return context
