@@ -1,14 +1,47 @@
 {% extends 'default.html' %}
-
-{% block title %}{% endblock title %}
+{% block title %}Мессенджер{% endblock title %}
 {% block content %}
-    {% for chat in chats %}
-        <div><a href="{% url 'room' chat %}">{{chat}}</a></div>
-    {% endfor %}
-    
-    <ul>
-    {% for contact in contacts %}
-    <li><a href="{% url 'room' contact %}">{{ contact }}</a></li>
-    {% endfor %}
-    </ul>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h3>Чаты</h3>
+            <div>
+                {% for chat in chats %}
+                    <div>
+                        <img src="{{chat.picture.url}}" class="img-thumbnail" style="border-radius: 50%;max-width: 50px;">
+                        <a href="{% url 'room' chat %}" class="text-decoration-none link-secondary">{{chat}}</a></div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-1">
+            <div>
+                <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header"> 
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Новый чат</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                                <div>фильтр поиска</div>
+                                <div>Новая группа</div>
+                                <div>Новый контакт</div>
+                            <div class="modal-body">
+                                {% for contact in contacts %}
+                                <p>
+                                    <img src="{{contact.avatar.url}}" class="img-thumbnail" style="border-radius: 50%;max-width: 50px;">
+                                    <a href="{% url 'room' contact %}" class="text-decoration-none link-secondary">{{ contact }}</a>
+                                </p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        </div>
+                    </div> 
+                <!-- /Button trigger modal -->
+            </div>
+        
+    </div>
+</div>
 {% endblock content %}

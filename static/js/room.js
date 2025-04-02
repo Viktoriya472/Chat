@@ -12,6 +12,7 @@ const chatSocket = new WebSocket(
 chatSocket.onmessage = function(e) {
     const data = JSON.parse(e.data);
     document.querySelector('#chat-log').value += (data.message + '\n');
+    document.querySelector('#chat-log').scrollTop = document.querySelector('#chat-log').scrollHeight;
 };
 
 chatSocket.onclose = function(e) {

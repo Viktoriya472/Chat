@@ -4,6 +4,7 @@ from main.models import Users, Contacts
 
 class Chat(models.Model):
     name = models.CharField(max_length=130)
+    picture = models.ImageField(upload_to="chat_picture/", blank=True, default="chat_picture/default.jpg")
     contacts = models.ManyToManyField(Contacts, related_name='chat_contacts')
     
     def __str__(self):
