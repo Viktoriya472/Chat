@@ -1,0 +1,25 @@
+{% extends 'default.html' %}
+{% block title %}Создать контакт{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row  justify-content-center">
+    <div class="col-5 my-3">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}    
+            <div class="form-outline mb-3">
+                <label class="form-label" for="id_name">Имя:</label>
+                <input class="form-control" type="text" name="name" maxlength="150" required="" id="id_name">
+            </div>
+            <div class="form-outline mb-3">
+                <label class="form-label" for="id_phone_number">Номер телефона:</label>
+                <input class="form-control" type="tel" name="phone_number" maxlength="128" required="" id="id_phone_number">
+            </div>
+            <div class="text-end"> 
+                <a href="{% url 'chat' %}" type="submit" class="btn btn-light">Отменить</a>
+                <button type="submit" class="btn btn-dark">Сохранить</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock %}

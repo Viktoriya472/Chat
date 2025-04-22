@@ -1,0 +1,58 @@
+{% extends 'default.html' %}
+{% block title %}Мессенджер{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4 my-3">
+            <h3>Чаты</h3>
+            <div>
+                {% for chat in chats %}
+                    <div class="py-2">
+                        <img src="{{chat.picture.url}}" class="img-thumbnail" style="border-radius: 50%;max-width: 50px;">
+                        <a href="{% url 'room' chat %}" class="text-decoration-none link-secondary">{{chat}}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-1 text-end my-3">
+            <div>
+            <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+</button>
+                <!-- Modal -->
+                <div class="modal fade text-start" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header"> 
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Новый чат</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                            <ul class="nav flex-column px-3">
+                                <li class="nav-item">
+                                    <!-- Search -->
+                                    <form action="{% url 'chat' %}" method="get" class="search-widget">
+                                        <input type="text" placeholder="Поиск" name="q">
+                                        <button type="submit"><i class="bi bi-search" type="submit"></i></button>
+                                    </form>
+                                    <!-- /Search -->
+                                </li>
+                                <li class="nav-item"><i class="bi bi-people-fill"></i><a class="text-dark text-decoration-none mx-2" href="{% url 'create_chat' %}">Новый чат</a></li>
+                                <li class="nav-item"><i class="bi bi-person-fill-add"></i><a class="text-dark text-decoration-none mx-2" href="{% url 'create_contact' %}">Новый контакт</a></li>
+                            </ul>
+                        <div class="modal-body">
+                            <h6>Контакты</h6>
+                            {% for contact in contacts %}
+                            <p>
+                                <img src="{{contact.avatar.url}}" class="img-thumbnail" style="border-radius: 50%;max-width: 50px;">
+                                <a href="{% url 'room' contact %}" class="text-decoration-none link-secondary">{{ contact }}</a>
+                            </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    </div>
+                </div> 
+            <!-- /Button trigger modal -->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

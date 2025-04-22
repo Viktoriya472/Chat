@@ -5,7 +5,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-8">
-            
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     {% for image in picture_chat %}
@@ -20,21 +19,20 @@
                         <span class="navbar-text">
                             <i class="bi bi-camera-video fs-5 px-2"></i>
                             <i class="bi bi-telephone fs-5 px-2"></i>
-                            <button type="button" class="btn-close px-2" aria-label="Close"></button>
+                            <a href="{% url 'chat' %}"><button type="button" class="btn-close px-2" aria-label="Close"></button></a>
                         </span>
                     </div>
                 </div>
             </nav>
-
             <textarea class="form-control mb-1" id="chat-log" rows="8" readonly></textarea>
             <textarea class="form-control" id="chat-message-input" rows="4"></textarea>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end pt-1">
-                <button id="chat-message-submit" class="btn btn-dark ">Отправить</button>
+                <button id="chat-message-submit" class="btn btn-dark mt-2">Отправить</button>
             </div>
 
         </div>
     </div>
 </div>
-{{ chat_name|json_script:"chat-name" }}   
+{{ chat_name|json_script:"chat-name" }}
 <script src="{% static 'js/room.js' %}"></script>
 {% endblock content %}

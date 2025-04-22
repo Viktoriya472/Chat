@@ -1,4 +1,3 @@
-console.log("Sanity check from room.js.")
 const chat_name = JSON.parse(document.getElementById('chat-name').textContent);
 
 const chatSocket = new WebSocket(
@@ -30,7 +29,7 @@ document.querySelector('#chat-message-submit').onclick = function(e) {
     const messageInputDom = document.querySelector('#chat-message-input');
     const message = messageInputDom.value;
     chatSocket.send(JSON.stringify({
-        'message': message
+        'message': message.replace(/(\n)/,'')
     }));
     messageInputDom.value = '';
 };

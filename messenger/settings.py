@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'chat.apps.ChatConfig',
-    'main.apps.MainConfig',
     'phone_auth',
     'phonenumber_field',
 ]
@@ -92,7 +91,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'phone_auth.backend.CustomAuthBackend',
 ]
-AUTHENTICATION_METHODS = {'phone',}
+AUTHENTICATION_METHODS = {'phone'}
 REGISTER_USERNAME_REQUIRED = True
 REGISTER_EMAIL_REQUIRED = False
 REGISTER_FNAME_REQUIRED = False
@@ -135,7 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files
 
 STATIC_URL = 'static/'
-STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/'
