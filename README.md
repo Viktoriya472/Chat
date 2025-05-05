@@ -10,8 +10,7 @@
   <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>git clone https://github.com/Viktoriya472/Chat.git
  </code></pre>
     <div class="zeroclipboard-container">
-      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git clone https://github.com/Viktoriya472/GameApp.git
-        " tabindex="0" role="button">
+      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="git clone https://github.com/Viktoriya472/GameApp.git" tabindex="0" role="button">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon"></svg>
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none"></svg>
       </clipboard-copy>
@@ -38,7 +37,7 @@
 pip install -r req.txt</code></pre>
     <div class="zeroclipboard-container">
       <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cd .\GameApp\
-pip install -r requirements.txt" tabindex="0" role="button">
+pip install -r req.txt" tabindex="0" role="button">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon"></svg>
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none"></svg>
       </clipboard-copy>
@@ -51,8 +50,7 @@ pip install -r requirements.txt" tabindex="0" role="button">
   <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>python manage.py migrate
  </code></pre>
     <div class="zeroclipboard-container">
-      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cd .\GameApp\
-pip install -r requirements.txt" tabindex="0" role="button">
+      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="python manage.py migrate" tabindex="0" role="button">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon"></svg>
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none"></svg>
       </clipboard-copy>
@@ -65,7 +63,7 @@ pip install -r requirements.txt" tabindex="0" role="button">
   <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>docker run -p 6379:6379 -d redis:7
  </code></pre>
     <div class="zeroclipboard-container">
-      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="jmilkfansblog-manager server" tabindex="0" role="button">
+      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="docker run -p 6379:6379 -d redis:7" tabindex="0" role="button">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon"></svg>
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none"></svg>
       </clipboard-copy>
@@ -78,7 +76,7 @@ pip install -r requirements.txt" tabindex="0" role="button">
   <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>python manage.py runserver
  </code></pre>
     <div class="zeroclipboard-container">
-      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="jmilkfansblog-manager server" tabindex="0" role="button">
+      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="python manage.py runserver" tabindex="0" role="button">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon"></svg>
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none"></svg>
       </clipboard-copy>
@@ -91,7 +89,7 @@ pip install -r requirements.txt" tabindex="0" role="button">
   <div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>python -m pip install -U channels["daphne"]
  </code></pre>
     <div class="zeroclipboard-container">
-      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="jmilkfansblog-manager server" tabindex="0" role="button">
+      <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="python -m pip install -U channels["daphne"]" tabindex="0" role="button">
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon"></svg>
         <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none"></svg>
       </clipboard-copy>
